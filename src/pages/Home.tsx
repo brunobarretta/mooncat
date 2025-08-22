@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { HeartPulse, Syringe, Stethoscope, Phone, MapPin, Clock, Home, ShoppingBag, ClipboardList, ScanLine, Activity, Flower2, Scissors } from "lucide-react";
-import { InstagramGrid } from "@/components/InstagramGrid";
 import { TeamSection } from "@/components/TeamSection";
 
 const WHATSAPP_URL =
