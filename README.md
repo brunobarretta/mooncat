@@ -1,6 +1,6 @@
-# 🐾 Moon Cat – Landing Page
+# 🐈 Moon Cat – Landing Page
 
-Landing page desenvolvida em **Next.js 15 + Tailwind CSS (v4)** para a clínica veterinária **Moon Cat Medicina Felina**, especializada exclusivamente em gatos.
+Landing page desenvolvida em **Next.js 15 + Tailwind CSS (v4)** para a clínica veterinária **Moon Cat **.
 
 ---
 
@@ -15,5 +15,22 @@ Landing page desenvolvida em **Next.js 15 + Tailwind CSS (v4)** para a clínica 
 
 ---
 
-## 📂 Estrutura
+## ⚙️ Configuração
 
+### Instalar dependências
+```bash
+yarn install
+# ou
+npm install
+```
+
+### Rodar em desenvolvimento
+```bash
+yarn dev
+```
+
+### Build para produção
+```bash
+yarn build
+yarn start
+```
