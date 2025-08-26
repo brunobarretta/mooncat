@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import { HeartPulse, Syringe, Stethoscope, Phone, MapPin, Clock, Home, ShoppingBag, ClipboardList, ScanLine, Activity, Flower2, Scissors } from "lucide-react";
+import { HeartPulse, Syringe, Stethoscope, Phone, MapPin, Clock, Home, ShoppingBag, ClipboardList, ScanLine, Activity, Flower2, Scissors, SquareCheckBig } from "lucide-react";
 import { TeamSection } from "@/components/TeamSection";
+import { Differentials } from "@/components/Differentials";
 
 const WHATSAPP_URL =
-  "https://api.whatsapp.com/send?phone=5519998404131&text=Ol%C3%A1!%20Vim%pelo%site%20da%20Moon%20Cat%20e%20gostaria%20de%20agendar%20uma%20consulta!";
+  "https://api.whatsapp.com/send?phone=5519998404131&text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Moon%20Cat%20e%20gostaria%20de%20agendar%20uma%20consulta!";
 const BRAND_NAME = "Moon Cat";
 const ADDRESS = "R. Reg. Feijó, 220 - Cidade Nova I, Indaiatuba - SP, 13334-090"; 
 const PHONE_DISPLAY = "(19) 99840-4131"; 
@@ -33,7 +34,7 @@ export default function HomePage() {
             <a
               href={WHATSAPP_URL}
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-emerald-500 text-white font-medium shadow hover:shadow-md transition"
+              className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-primary text-white font-medium shadow hover:shadow-md transition"
             >
               <Phone className="w-4 h-4" /> Agendar no WhatsApp
             </a>
@@ -153,34 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* Diferenciais */}
-      <section className="py-16 bg-gray-50" id="diferenciais">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold">Feita para gatos</h3>
-            <ul className="mt-6 space-y-3 text-gray-700">
-              <li>• Ambiente sem cães para reduzir o estresse</li>
-              <li>• Equipe apaixonada e treinada em manejo felino</li>
-              <li>• Consultórios e internação adaptados para felinos</li>
-              <li>• Atendimento humanizado para tutores</li>
-            </ul>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              className="mt-6 inline-flex items-center gap-2 rounded-2xl px-6 py-3 bg-emerald-500 text-white font-semibold shadow hover:shadow-md transition"
-            >
-              <Phone className="w-5 h-5" /> Falar no WhatsApp
-            </a>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src="/images/cat.png"
-              alt="Consultório felino preparado"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
+      <Differentials whatsAppUrl={WHATSAPP_URL} />
 
       {/* TeamSection */}
       <TeamSection />
@@ -199,7 +173,7 @@ export default function HomePage() {
               <p className="flex items-center gap-2"><Clock className="w-5 h-5 text-primary shrink-0" /> Seg–Sex: 08:30h–17:30h • Sáb: 08:30h–12:30h</p>
             </div>
             <div className="mt-6 flex gap-3">
-              <a href={WHATSAPP_URL} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 bg-emerald-500 text-white font-semibold shadow hover:shadow-md transition">
+              <a href={WHATSAPP_URL} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 bg-primary text-white font-semibold shadow hover:shadow-md transition">
                 <Phone className="w-5 h-5" /> WhatsApp
               </a>
               <a href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 font-semibold text-white shadow hover:opacity-90 transition bg-gradient-to-r from-[#d62976] via-[#962fbf] to-[#4f5bd5]">
@@ -228,7 +202,7 @@ export default function HomePage() {
           <div className="rounded-2xl overflow-hidden shadow border border-primary">
             <iframe
               title="Mapa da clínica"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1596.7335676221787!2d-47.20296011074751!3d-23.084471881142953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b4b1a6267ec3%3A0xe343681089f0996b!2sR.%20Reg.%20Feij%C3%B3%2C%20220%20-%20Cidade%20Nova%20I%2C%20Indaiatuba%20-%20SP%2C%2013334-090!5e1!3m2!1spt-BR!2sbr!4v1755876339470!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1596.7335676221787!2d-47.20296011074751!3d-23.084471881142953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b4b1a6267ec3%3A0xe343681089f0996b!2sR.%20Reg.%20Feij%C3%B3%2C%20220%20-%20Cidade%20Nova%20I%2C%20Indaiatuba%20-%20SP%2C%2013334-090!5e0!3m2!1spt-BR!2sbr!4v1755876339470!5m2!1spt-BR!2sbr"
               loading="lazy"
               className="w-full aspect-[4/3]"
             />
