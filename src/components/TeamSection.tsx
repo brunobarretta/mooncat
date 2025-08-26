@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Stethoscope, GraduationCap, BadgeCheck, Instagram, Phone } from "lucide-react";
+import { Stethoscope, BadgeCheck, Phone, Check } from "lucide-react";
 
 type Professional = {
   name: string;
@@ -16,18 +16,24 @@ const TEAM: Professional[] = [
   {
     name: "Dra. Júlia Maestrello",
     role: "Médica Veterinária",
-    crmv: "CRMV-SP 00000",
-    specialties: ["Clínica Felina", "Comportamento", "Odontologia"],
-    photo: "/images/team/maria.jpg",
-    // instagram: "https://www.instagram.com/mooncatmedicinafelina/",
-    // whatsapp: "https://api.whatsapp.com/send?phone=5519998404131",
+    crmv: "CRMV-SP 46465",
+    specialties: [
+      "Médica veterinária especializada em clínica médica e cirúrgica de felinos", 
+      "Certificação internacional de padrão de atendimento Cat Friendly (padrão ouro de atendimento aos gatos)", 
+      "Palestrante de Medicina Felina ",
+      "Comunicadora Animal"
+    ],
+    photo: "/images/team/julia-maestrello.jpeg"
   },
   {
     name: "Dra. Michelle Carettoni",
     role: "Médica Veterinária",
-    crmv: "CRMV-SP 00001",
-    specialties: ["Cirurgia", "Anestesiologia", "Ultrassonografia"],
-    photo: "/images/team/joao.jpg",
+    crmv: "CRMV-SP 57379",
+    specialties: [
+      "Médica veterinária especializada em medicina felina e também fisioterapeuta humana - com ênfase em terapias com animais",
+      "Especializada em terapias integrativas"
+    ],
+    photo: "/images/team/michelle-carettoni.jpeg"
   }
 ];
 
@@ -44,13 +50,12 @@ export function TeamSection() {
               key={p.name}
               className="rounded-2xl border border-primary bg-white overflow-hidden shadow-sm hover:shadow-md transition"
             >
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-[3/3]">
                 <Image
                   src={p.photo}
                   alt={`Foto de ${p.name}`}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
                   priority={false}
                 />
               </div>
@@ -58,28 +63,25 @@ export function TeamSection() {
               <div className="p-5">
                 <h3 className="text-xl font-semibold">{p.name}</h3>
                 <p className="mt-1 text-sm text-gray-600 flex items-center gap-2">
-                  <Stethoscope className="w-4 h-4 text-primary" />
+                  <Stethoscope className="w-5 h-5 text-primary" />
                   {p.role}
                 </p>
 
                 {p.crmv && (
                   <p className="mt-1 text-xs text-gray-500 flex items-center gap-2">
-                    <BadgeCheck className="w-4 h-4 text-primary" />
+                    <BadgeCheck className="w-5 h-5 text-primary" />
                     {p.crmv}
                   </p>
                 )}
 
                 {p.specialties?.length ? (
-                  <div className="mt-4 text-sm text-gray-700">
-                    <div className="flex items-center gap-2 mb-1">
-                      <GraduationCap className="w-4 h-4 text-primary" />
-                      <span className="font-medium">Especialidades</span>
-                    </div>
-                    <ul className="mt-1 list-disc list-inside space-y-1">
+                  <div className="mt-4">
                       {p.specialties.map((s) => (
-                        <li key={s}>{s}</li>
+                        <div key={s} className="flex items-center gap-2 mb-1">
+                          <Check className="w-5 h-5 shrink-0 text-primary" />
+                          <p className="text-sm text-gray-700">{s}</p>
+                        </div>
                       ))}
-                    </ul>
                   </div>
                 ) : null}
 
@@ -92,7 +94,6 @@ export function TeamSection() {
                         className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-white font-medium shadow hover:opacity-90 transition bg-gradient-to-r from-[#feda75] via-[#d62976] via-[#962fbf] to-[#4f5bd5]"
                         aria-label={`Instagram de ${p.name}`}
                       >
-                        <Instagram className="w-4 h-4" />
                         Instagram
                       </a>
                     )}
