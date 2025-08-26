@@ -43,17 +43,6 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gray-50">
-        {/* Background */}
-        {/* <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/mooncat.png"
-            alt="Gato recebendo carinho em clínica"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-        </div> */}
-
         {/* Container */}
         <div className="max-w-6xl mx-auto px-4 py-24 md:py-32 grid md:grid-cols-2 gap-10 items-center">
           <div className="max-w-3xl">
@@ -81,7 +70,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex justify-center md:justify-end">
+          <div className="flex flex-col items-center md:items-center gap-6">
             <Image
               src="/images/mooncat.png"
               alt="Logo da clínica Moon Cat"
@@ -90,6 +79,23 @@ export default function HomePage() {
               className="animate-fade-in-up"
               priority
             />
+
+            <div className="flex items-center justify-center flex-wrap gap-4">
+              <Image
+                src="/images/cat-friendly-practice-logo.png"
+                alt="Selo Cat Friendly Practice"
+                width={200}
+                height={80}
+                className="drop-shadow-md"
+              />
+              <Image
+                src="/images/cat-friendly-veterinarian.png"
+                alt="Selo Cat Friendly Veterinarian"
+                width={200}
+                height={60}
+                className="drop-shadow-md"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -188,9 +194,9 @@ export default function HomePage() {
           <div>
             <h3 className="text-2xl md:text-3xl font-bold">Fale com a gente</h3>
             <div className="mt-6 space-y-3 text-gray-700">
-              <p className="flex items-center gap-2"><MapPin className="w-5 h-5 text-primary" /> {ADDRESS}</p>
-              <p className="flex items-center gap-2"><Phone className="w-5 h-5 text-primary" /> {PHONE_DISPLAY}</p>
-              <p className="flex items-center gap-2"><Clock className="w-5 h-5 text-primary" /> Seg–Sex: 08:30h–17:30h • Sáb: 08:30h–12:30h</p>
+              <p className="flex items-center gap-2"><MapPin className="w-5 h-5 text-primary shrink-0" /> {ADDRESS}</p>
+              <p className="flex items-center gap-2"><Phone className="w-5 h-5 text-primary shrink-0" /> {PHONE_DISPLAY}</p>
+              <p className="flex items-center gap-2"><Clock className="w-5 h-5 text-primary shrink-0" /> Seg–Sex: 08:30h–17:30h • Sáb: 08:30h–12:30h</p>
             </div>
             <div className="mt-6 flex gap-3">
               <a href={WHATSAPP_URL} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 bg-emerald-500 text-white font-semibold shadow hover:shadow-md transition">
@@ -199,6 +205,23 @@ export default function HomePage() {
               <a href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`} target="_blank" className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 font-semibold text-white shadow hover:opacity-90 transition bg-gradient-to-r from-[#d62976] via-[#962fbf] to-[#4f5bd5]">
                 Instagram
               </a>
+            </div>
+
+            <div className="mt-8 flex items-center gap-6">
+              <Image
+                src="/images/cat-friendly-practice-logo.png"
+                alt="Selo Cat Friendly Practice"
+                width={160}
+                height={60}
+                className="drop-shadow-md"
+              />
+              <Image
+                src="/images/cat-friendly-veterinarian.png"
+                alt="Selo Cat Friendly Veterinarian"
+                width={160}
+                height={60}
+                className="drop-shadow-md"
+              />
             </div>
           </div>
           {/* Google Maps Embed */}
